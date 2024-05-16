@@ -2,10 +2,13 @@
 
 @section('content')
 
-<h1>Nuova Pagina</h1>
+<div class="container my-5">
+    <h1>Producst</h1>
+</div>
+
 
 @endsection
 
 @section('title')
-   Nuova pagina
+Products
 @endsection

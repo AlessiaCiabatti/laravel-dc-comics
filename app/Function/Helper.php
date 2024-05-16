@@ -5,6 +5,7 @@ use Illuminate\Support\Str;
 
 // heper di venta un raccoglitore di metodi
 class Helper{
+    // gli passo il model così per qualsiasi model abbiamo la funzione che ci genera lo slug
     public static function generateSlug($string, $model){
             // della classe Str, usiamo il metodo statico slug
         $slug = Str::slug($string, '-');
