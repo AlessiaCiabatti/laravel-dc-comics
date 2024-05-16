@@ -17,6 +17,7 @@
                                 <p class="card-text">Price: {{ $product->price }}</p>
                                 <p class="card-text">Series: {{ $product->series }}</p>
                                 <p class="card-text">{{ $product->sale_date }}</p>
+                                <a href="{{route('comics.show', $product->id)}}"><i class="fa-solid fa-circle-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
