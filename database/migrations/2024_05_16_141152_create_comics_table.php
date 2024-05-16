@@ -16,13 +16,13 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('description');
-            $table->string('thumb')->nullable();
-            $table->decimal('price', 4,2)->unsigned();
+            $table->string('thumb', 500)->nullable();
+            $table->string('price');
             $table->string('series');
             $table->date('sale_date');
             $table->string('type')->nullable();
-            $table->json('artists');
-            $table->json('writers');
+            $table->json('artists')->nullable();
+            $table->json('writers')->nullable();
             $table->timestamps();
         });
     }

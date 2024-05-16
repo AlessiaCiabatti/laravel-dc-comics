@@ -21,16 +21,17 @@ class ComicsTableSeeder extends Seeder
             $new_comic = new Comic();
             $new_comic->title = $comic['title'];
             $new_comic->slug = Helper::generateSlug($new_comic->title, new Comic());
+            $new_comic->description = $comic['description'];
             $new_comic->thumb = $comic['thumb'];
             $new_comic->price = $comic['price'];
             $new_comic->series = $comic['series'];
             $new_comic->sale_date = $comic['sale_date'];
             $new_comic->type = $comic['type'];
             // con la funzione implode() convertiamo gli array di artisti e scrittori in stringhe separate da virgole
-            $new_comic->artists = implode(', ', $comic['artists']);
-            $new_comic->writers = implode(', ', $comic['writers']);
-
-            dump($new_comic);
+            $new_comic->artists = json_encode($comic['artists']);
+            $new_comic->artists = json_encode($comic['writers']);
+            $new_comic->save();
+            // dump($new_comic);
         }
     }
 }
