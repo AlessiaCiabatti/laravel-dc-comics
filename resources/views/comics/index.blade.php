@@ -2,43 +2,33 @@
 
 @section('content')
 
-<div class="container my-5">
-    <h1>Elenco prodotti</h1>
+    <div class="container my-5">
+        <h1>Elenco prodotti</h1>
 
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-</div>
+        <div class="container my-5 ">
+            <div class="row row-cols-4">
+                @foreach ($products as $product)
+                    <div class="col mb-3">
+                        <div class="card d-flex justify-content-center align-items-center" style="min-height: 500px;">
+                            <img src="{{ $product->thumb }}" class="" alt="{{ $product->thumb }}" style="max-width: 100px;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $product->title }}</h5>
+                                <p class="card-text">{{ $product->type }}</p>
+                                <p class="card-text">Price: {{ $product->price }}</p>
+                                <p class="card-text">Series: {{ $product->series }}</p>
+                                <p class="card-text">{{ $product->sale_date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
 
+
+    </div>
 
 @endsection
 
 @section('title')
-Products
+    Products
 @endsection
