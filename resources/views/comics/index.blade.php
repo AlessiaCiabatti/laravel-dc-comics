@@ -9,8 +9,8 @@
             <div class="row row-cols-4">
                 @foreach ($products as $product)
                     <div class="col mb-3">
-                        <div class="card d-flex justify-content-center align-items-center" style="min-height: 500px;">
-                            <img src="{{ $product->thumb }}" class="" alt="{{ $product->thumb }}" style="max-width: 100px;">
+                        <div class="card d-flex justify-content-center align-items-center" style="min-height: 550px;">
+                            <img src="{{ $product->thumb }}" class="" alt="{{ $product->thumb }}" style="max-width: 150px;">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $product->title }}</h5>
                                 <p class="card-text">{{ $product->type }}</p>

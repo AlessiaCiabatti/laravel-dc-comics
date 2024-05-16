@@ -6,7 +6,7 @@
         {{-- @dump($comic) --}}
         <div class="row">
             <div class="col">
-                <img class="mb-4" src="{{ $comic->thumb }}" class="" alt="{{ $comic->thumb }}" style="max-width: 100px;">
+                <img class="mb-4" src="{{ $comic->thumb }}" class="" alt="{{ $comic->thumb }}" style="max-width: 200px;">
                 <h4 class="mb-4">Description</h4>
                 <p>{{ $comic->description }}</p>
             </div>
