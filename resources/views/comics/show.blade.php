@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container my-5">
-        <h1 class="mb-4">{{ $comic->title }}</h1>
+        <h1 class="mb-4">{{ $comic->title }} <a href="{{ route('comics.edit', $comic->id) }}"><i class="fa-solid fa-pen"></i></a> </h1>
         {{-- @dump($comic) --}}
         <div class="row">
             <div class="col">
