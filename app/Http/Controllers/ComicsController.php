@@ -113,14 +113,18 @@ class ComicsController extends Controller
         //efffettua il fill dei dati e li salva aggiornando il db
         $comic->update($form_data);
 
-        return redirect()->rounte('comics.show', $comic);
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Comic $comic)
     {
-        //
+        //eliminzaione elemento e reindirizzo alla index con un messaggio in sessione dell'avvenuta eliminazione
+        $comic->delete();
+
+        // ->with('ciave_varicbile_di _sessione', 'valore variabile di sessione nome arbitrario')
+        return redirect()->route('comics.index')->with('deleted', 'Your comic book' . $comic->title . 'was deleted correctly');
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container my-5">
-        <h1>{{ $comic->title }}</h1>
+        <h1>{{ $comic->title }} @include('partials.formdelete')</h1>
         <div class="row">
             <div class="col-8">
 {{-- @dump($comic) --}}
@@ -30,6 +30,7 @@
                 <form action="{{ route('comics.update', $comic) }}" method="post">
                     {{-- tutti i nostri form deve essere presente @csrf --}}
                     @csrf
+                    {{-- put sovrascrive tutti gli elementi in update solitamente si usa, patch sostituisce il dato singolo --}}
                     @method('PUT')
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
