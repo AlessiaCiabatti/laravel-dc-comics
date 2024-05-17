@@ -15,12 +15,10 @@
             <div class="row row-cols-4">
                 @foreach ($products as $comic)
                     <div class="col mb-3">
-                        <div class="card border-0 d-flex flex-column justify-content-between" style="min-height: 550px;">
-                            <div class="d-flex justify-content-center align-items-center"
-                                style="height: 400px; overflow: hidden;">
-                                <img src="{{ $comic->thumb }}" class="img-fluid" alt="{{ $comic->title }}"
-                                    style="max-height: 100%;">
-                            </div>
+                        <div class="card border-0 d-flex flex-column justify-content-between">
+
+                                <img class="img-card" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+
                             <div class="card-body">
                                 <h5 class="card-title">{{ $comic->title }}</h5>
                                 <p class="card-text">{{ $comic->type }}</p>
