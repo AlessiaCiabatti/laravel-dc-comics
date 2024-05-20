@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
-            $table->text('description')->nullable();
+            $table->text('description');
             $table->string('thumb', 500)->nullable();
-            $table->string('price')->nullable();
+            $table->string('price');
             $table->string('series')->nullable();
-            $table->date('sale_date')->nullable();
-            $table->string('type')->nullable();
+            $table->date('sale_date');
+            $table->string('type');
             $table->json('artists')->nullable();
             $table->json('writers')->nullable();
             $table->timestamps();

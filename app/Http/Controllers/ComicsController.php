@@ -36,6 +36,39 @@ class ComicsController extends Controller
     public function store(Request $request)
     // il form in post invia a questa rotta
     {
+
+        // validazione,
+        $request->validate([
+            // required = richiesto
+            // e posso mettere altri parametri di seguito e devono essere in relazione con gli elementi  della migrazione
+            'title' => 'required|min:3|max:255',
+            'type' => 'required|min:2|max:255',
+            'price' => 'required|min:2|max:255',
+            'sale_date' => 'required|min:2|max:255',
+            'description' => 'required|min:10|max:255',
+        ],
+        [
+            'titolo.required' => 'Il titolo è un campo obbligatorio',
+            'titolo.min' => 'Il titolo deve avere un minimo di :min caratteri',
+            'titolo.max' => 'Il titolo non deve avere più di :max caratteri',
+
+            'type.required' => 'Il type è un campo obbligatorio',
+            'type.min' => 'Il campo type deve avere un minimo di :min caratteri',
+            'type.max' => 'Il campo type non deve avere più di :max caratteri',
+
+            'price.required' => 'Il price è un campo obbligatorio',
+            'price.min' => 'Il campo price deve avere un minimo di :min caratteri',
+            'price.max' => 'Il campo price non deve avere più di :max caratteri',
+
+            'sale_date.required' => 'Il sale_date è un campo obbligatorio',
+            'sale_date.min' => 'Il campo sale_date deve avere un minimo di :min caratteri',
+            'sale_date.max' => 'Il campo sale_date non deve avere più di :max caratteri',
+
+            'description.required' => 'Il description è un campo obbligatorio',
+            'description.min' => 'Il campo description deve avere un minimo di :min caratteri',
+            'description.max' => 'Il campo description non deve avere più di :max caratteri',
+        ]);
+
         // riceve la $request che sono tutti i dati contenuti nel form
         // prendo tutti i dati provenienti dal form
         $form_data = $request->all();
