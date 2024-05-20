@@ -32,7 +32,7 @@
                     {{-- put sovrascrive tutti gli elementi in update solitamente si usa, patch sostituisce il dato singolo --}}
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="title" class="form-label">Title</label>
+                        <label for="title" class="form-label">Title (*)</label>
                         <input name="title" type="text" class="form-control @error('title') is-invalid @enderror"
                             id="title" value="{{ old('title'), $comic->title }}">
                         @error('description')
@@ -56,7 +56,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="type" class="form-label">Type</label>
+                        <label for="type" class="form-label">Type (*)</label>
                         <input name="type" type="text" class="form-control @error('type') is-invalid @enderror"
                             id="type" value="{{ old('type'), $comic->type }}">
                         @error('type')
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="price" class="form-label">Price</label>
+                        <label for="price" class="form-label">Price (*)</label>
                         <input name="price" type="text" class="form-control @error('price') is-invalid @enderror"
                             id="price" value="{{ old('price'), $comic->price }}">
                         @error('price')
@@ -92,7 +92,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="sale_date" class="form-label">Sale Date</label>
+                        <label for="sale_date" class="form-label">Sale Date (*)</label>
                         <input name="sale_date" type="date" class="form-control @error('sale_date') is-invalid @enderror"
                             id="sale_date" value="{{ old('sale_date'), $comic->sale_date }}">
                         @error('sale_date')
@@ -104,7 +104,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
+                        <label for="description" class="form-label">Description (*)</label>
                         <textarea name="description" class="form-control" type="textarea"
                             class="form-control @error('description') is-invalid @enderror" id="description"
                             value="{{ old('description'), $comic->description }}"></textarea>
