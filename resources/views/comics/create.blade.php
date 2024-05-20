@@ -6,11 +6,11 @@
 
         {{-- alert --}}
 
-        <div class="alert alert-danger" role="alert">
-            {{-- metodo $errors->any() restituisce true se ci sono errori --}}
-            {{-- $errors->all() restituisce array con tutti errori --}}
-            @if ($errors->any())
-                {
+
+        {{-- metodo $errors->any() restituisce true se ci sono errori --}}
+        {{-- $errors->all() restituisce array con tutti errori --}}
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>
@@ -18,10 +18,8 @@
                         </li>
                     @endforeach
                 </ul>
-                }
-            @endif
-
-        </div>
+            </div>
+        @endif
 
         <div class="row">
             <div class="col-8">
@@ -68,7 +66,7 @@
 
                     <div class="mb-3">
                         <label for="price" class="form-label">Price (*)</label>
-                        <input name="price" type="text" class="form-control @error('type') is-invalid @enderror"
+                        <input name="price" type="text" class="form-control @error('price') is-invalid @enderror"
                             id="price" value="{{ old('price') }}">
                         @error('price')
                             <small class="text-danger">

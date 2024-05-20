@@ -8,6 +8,7 @@ use App\Function\Helper;
 
 // importo
 use App\Http\Requests\ComicRequest;
+
 class ComicsController extends Controller
 {
     /**
@@ -41,7 +42,7 @@ class ComicsController extends Controller
     {
 
     // validazione senza classe Custam ComicRequest
-        // // validazione,
+        // // // // validazione,
         // $request->validate([
         //     // required = richiesto
         //     // e posso mettere altri parametri di seguito e devono essere in relazione con gli elementi  della migrazione
@@ -127,7 +128,7 @@ class ComicsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $comic)
+    public function update(ComicRequest $request, Comic $comic)
     {
         /*
 
@@ -147,7 +148,7 @@ class ComicsController extends Controller
             $form_data['slug'] = Helper::generateSlug($form_data['title'], new Comic);
         }
 
-        //efffettua il fill dei dati e li salva aggiornando il db
+        //effettua il fill dei dati e li salva aggiornando il db
         $comic->update($form_data);
 
         return redirect()->route('comics.show', $comic);
