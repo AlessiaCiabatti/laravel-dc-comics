@@ -3,29 +3,28 @@
 @section('content')
     <div class="container my-5">
         <h1>{{ $comic->title }} @include('partials.formdelete')</h1>
+
+        <div class="alert alert-danger" role="alert">
+            {{-- metodo $errors->any() restituisce true se ci sono errori --}}
+            {{-- $errors->all() restituisce array con tutti errori --}}
+            @if ($errors->any())
+                {
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>
+                            {{ $error }}
+                        </li>
+                    @endforeach
+                </ul>
+                }
+            @endif
+
+        </div>
+
         <div class="row">
             <div class="col-8">
-{{-- @dump($comic) --}}
-                @php
-                $status = 'test';
-                    $title = '';
-                    $thumb = '';
-                    $type = '';
-                    $price = '';
-                    $series = '';
-                    $sale_date = '';
-                    $description = '';
+                {{-- @dump($comic) --}}
 
-                    if( $status === 'test'){
-                    $title = 'comic test';
-                    $thumb = 'prova';
-                    $type = 'prova';
-                    $price = 'prova';
-                    $series = 'prova';
-                    $sale_date = 'prova';
-                    $description = 'prova prova prova';
-                    }
-                @endphp
 
                 <form action="{{ route('comics.update', $comic) }}" method="post">
                     {{-- tutti i nostri form deve essere presente @csrf --}}
@@ -34,37 +33,87 @@
                     @method('PUT')
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
-                        <input name="title" type="text" class="form-control" id="title" value="{{ $comic->title }}">
+                        <input name="title" type="text" class="form-control @error('title') is-invalid @enderror"
+                            id="title" value="{{ old('title'), $comic->title }}">
+                        @error('description')
+                            <small class="text-danger">
+                                {{-- viene letto il messaggio dentro l'array --}}
+                                {{ $message }}
+                            </small>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="thumb" class="form-label">Image (src)</label>
-                        <input name="thumb" type="text" class="form-control" id="src" value="{{ $comic->thumb }}">
+                        <input name="thumb" type="text" class="form-control @error('src') is-invalid @enderror"
+                            id="src" value="{{ old('src'), $comic->src }}">
+                        @error('thumb')
+                            <small class="text-danger">
+                                {{-- viene letto il messaggio dentro l'array --}}
+                                {{ $message }}
+                            </small>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="type" class="form-label">Type</label>
-                        <input name="type" type="text" class="form-control" id="type" value="{{ $comic->type }}">
+                        <input name="type" type="text" class="form-control @error('type') is-invalid @enderror"
+                            id="type" value="{{ old('type'), $comic->type }}">
+                        @error('type')
+                            <small class="text-danger">
+                                {{-- viene letto il messaggio dentro l'array --}}
+                                {{ $message }}
+                            </small>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
-                        <input name="price" type="text" class="form-control" id="price" value="{{ $comic->price }}">
+                        <input name="price" type="text" class="form-control @error('price') is-invalid @enderror"
+                            id="price" value="{{ old('price'), $comic->price }}">
+                        @error('price')
+                            <small class="text-danger">
+                                {{-- viene letto il messaggio dentro l'array --}}
+                                {{ $message }}
+                            </small>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="series" class="form-label">Series</label>
-                        <input name="series" type="text" class="form-control" id="series" value="{{ $comic->series }}">
+                        <input name="series" type="text" class="form-control @error('series') is-invalid @enderror"
+                            id="series" value="{{ old('series'), $comic->series }}">
+                        @error('series')
+                            <small class="text-danger">
+                                {{-- viene letto il messaggio dentro l'array --}}
+                                {{ $message }}
+                            </small>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="sale_date" class="form-label">Sale Date</label>
-                        <input name="sale_date" type="date" class="form-control" id="sale_date" value="{{ $comic->sale_date }}">
+                        <input name="sale_date" type="date" class="form-control @error('sale_date') is-invalid @enderror"
+                            id="sale_date" value="{{ old('sale_date'), $comic->sale_date }}">
+                        @error('sale_date')
+                            <small class="text-danger">
+                                {{-- viene letto il messaggio dentro l'array --}}
+                                {{ $message }}
+                            </small>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <textarea name="description" class="form-control" type="textarea" class="form-control" id="description" value="{{ $comic->description }}"></textarea>
+                        <textarea name="description" class="form-control" type="textarea"
+                            class="form-control @error('description') is-invalid @enderror" id="description"
+                            value="{{ old('description'), $comic->description }}"></textarea>
+                        @error('description')
+                            <small class="text-danger">
+                                {{-- viene letto il messaggio dentro l'array --}}
+                                {{ $message }}
+                            </small>
+                        @enderror
                     </div>
 
                     <button class="btn btn-success" type="submit">Modify the product</button>
