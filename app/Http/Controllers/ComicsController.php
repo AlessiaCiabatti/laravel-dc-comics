@@ -48,9 +48,9 @@ class ComicsController extends Controller
             'description' => 'required|min:10|max:255',
         ],
         [
-            'titolo.required' => 'Il titolo è un campo obbligatorio',
-            'titolo.min' => 'Il titolo deve avere un minimo di :min caratteri',
-            'titolo.max' => 'Il titolo non deve avere più di :max caratteri',
+            'title.required' => 'Il titolo è un campo obbligatorio',
+            'title.min' => 'Il titolo deve avere un minimo di :min caratteri',
+            'title.max' => 'Il titolo non deve avere più di :max caratteri',
 
             'type.required' => 'Il type è un campo obbligatorio',
             'type.min' => 'Il campo type deve avere un minimo di :min caratteri',
