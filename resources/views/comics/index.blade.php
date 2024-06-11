@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-    <div class="container my-5">
+    <div class="container comics-index">
         <h1>Elenco prodotti</h1>
         {{-- se esiste una variabile di sessione denominata 'deleted' la stampo nell'alert --}}
         @if (session('deleted'))
@@ -11,7 +11,7 @@
         @endif
 
 
-        <div class="container my-5">
+        <div class="container index-bg">
             <div class="row row-cols-4">
                 @foreach ($products as $comic)
                     <div class="col mb-3">

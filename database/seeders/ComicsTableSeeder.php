@@ -18,6 +18,7 @@ class ComicsTableSeeder extends Seeder
         // dump($comics);
 
         foreach($comics as $comic){
+            // sempre crearenuova istanza
             $new_comic = new Comic();
             $new_comic->title = $comic['title'];
             $new_comic->slug = Helper::generateSlug($new_comic->title, new Comic());

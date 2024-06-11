@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-    <div class="container my-5">
+    <div class="container">
         <h1>New Product</h1>
 
         {{-- alert --}}
