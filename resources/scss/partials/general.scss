@@ -1,7 +1,9 @@
-body{
+body {
     background-image: url('https://everythingcomics.ca/cdn/shop/files/NewReleasesLONG.jpg?v=1714837407&width=1600');
-    background-size:contain;
+    background-size: contain;
+
 }
+
 
 .img-card {
     object-fit: cover;
@@ -9,38 +11,38 @@ body{
 }
 
 header {
-    .bg-logo{
+    .bg-logo {
         background-color: black;
-        .icons{
+
+        .icons {
             line-height: 65px;
-            a{
+
+            a {
                 margin-right: 20px;
                 font-size: 1.7rem;
             }
         }
     }
-    img{
+
+    img {
         height: 70px;
         width: 130px;
     }
 
-    // ul.nav {
-    //     background-color: white;
-    //     padding-bottom: 10px;
-    //     box-shadow: 0px 10px 10px -10px black;
-    // }
-
     background-color: white;
+
     // padding: 20px;
     a.nav-link {
         padding-left: 0px;
         margin-right: 50px;
         font-size: 1.2rem;
     }
-    a.nav-link{
+
+    a.nav-link {
         color: black;
     }
-    a.nav-link:hover{
+
+    a.nav-link:hover {
         color: black;
         text-decoration: underline;
     }
@@ -48,7 +50,8 @@ header {
     a.games.nav-link.active {
         color: gray;
         margin-left: 5px;
-        span{
+
+        span {
             margin-left: 30px;
             margin-right: 0px;
         }
@@ -56,30 +59,152 @@ header {
 }
 
 // comics-index
-    h1{
-        background-color: white;
-        padding-top: 30px;
-        padding-bottom: 20px;
+h1 {
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    margin-bottom: 0px;
+}
+
+.index-bg,
+.show-bg,
+.home-bg,
+.edit-bg,
+.create-bg {
+    background-color: white;
+    padding-top: 10px;
+}
+
+.index-bg {
+    padding-bottom: 50px;
+
+    .title-comic {
+        // background-color: red;
+        padding: 15px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-comic {
+        height: 350px;
+    }
+}
+
+// show
+.description.flex-column {
+    width: 60%;
+    margin-right: 50px;
+    margin-top: 40px;
+}
+
+.show-bg {
+    height: calc(100vh - 269px);
+}
+
+// home
+.home-bg {
+    height: calc(100vh - 269px);
+
+    p {
         padding-left: 10px;
-        margin-bottom: 0px;
+        margin-bottom: 50px;
+        font-size: 1.5rem;
     }
 
-    .index-bg, .show-bg{
-        background-color: white;
-        padding-top: 10px;
+    .arrow {
+        margin-left: 50px;
+
+        img {
+            width: 100px;
+        }
     }
 
-    .index-bg{
-        padding-bottom: 50px;
+    a{
+        text-decoration: none;
     }
 
-    // show
-    .description.flex-column {
-        width: 60%;
-        margin-right: 50px;
-        margin-top: 40px;
+    .glow-on-hover {
+        width: 150px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
     }
 
-    .show-bg{
-        height: calc(100vh - 269px);
+    .glow-on-hover:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
     }
+
+    .glow-on-hover:active {
+        color: #000
+    }
+
+    .glow-on-hover:active:after {
+        background: transparent;
+    }
+
+    .glow-on-hover:hover:before {
+        opacity: 1;
+    }
+
+    .glow-on-hover:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #111;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+    @keyframes glowing {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+}
+
+// edit create
+.form-edit,
+.form-create{
+    width: 70%;
+    margin: 0 auto;
+    height: calc(100vh - 269px);
+}
+
+.create-bg{
+    height: calc(100vh - 269px);
+}
+

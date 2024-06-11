@@ -21,8 +21,8 @@
             </div>
         @endif
 
-        <div class="row">
-            <div class="col-8">
+        <div class="create-bg">
+            <div class="form-create">
 
                 <form action="{{ route('comics.store') }}" method="post">
                     {{-- tutti i nostri form deve essere presente @csrf --}}

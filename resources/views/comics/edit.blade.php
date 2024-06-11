@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('content')
-    <div class="container my-5">
+    <div class="container">
         <h1>{{ $comic->title }} @include('partials.formdelete')</h1>
 
         @if ($errors->any())
@@ -17,8 +17,8 @@
             </div>
         @endif
 
-        <div class="row">
-            <div class="col-8">
+        <div class="edit-bg">
+            <div class="form-edit">
                 {{-- @dump($comic) --}}
 
 
